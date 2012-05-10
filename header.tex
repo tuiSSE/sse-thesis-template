@@ -1,0 +1,322 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% DOKUMENTVORLAGE THOMAS DIETRICH  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[
+		12pt,						% Schriftgröße
+		ngerman,					% für Umlaute, Silbentrennung etc.
+		a4paper,					% Papierformat
+%		oneside,					% einseitiges Dokument
+		twoside,					% zweiseitiges Dokument
+		titlepage,					% es wird eine Titelseite verwendet
+		parskip=half,				% Abstand zwischen Absätzen (halbe Zeile)
+		headings=normal,			% Größe der Überschriften verkleinern
+		open=right,					% Chapter beginnen rechts
+		listof=totoc,				% Verzeichnisse im Inhaltsverzeichnis aufführen
+		bibliography=totoc,			% Literaturverzeichnis im Inhaltsverzeichnis aufführen
+		captions=tableheading,		% Beschriftung von Tabellen unterhalb ausgeben
+		draft=true, 				% TODO: Entwurfsmodus, im finalen Dokument auf false zu setzen
+]{scrreprt} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ 
+%% Schrift und Deutsch %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[ansinew]{inputenc} 
+\usepackage{textcomp} % Euro-Zeichen etc.
+\usepackage{lmodern}
+
+%\usepackage[T1]{fontenc}
+%\usepackage[utf8x]{inputenc}
+%\usepackage{libertine}
+%\usepackage[ngerman]{babel}
+
+%\usepackage{xunicode}
+%\usepackage{fontspec}
+%\usepackage{xltxtra} % für XeLaTeX 
+%\setromanfont[Mapping=tex-text]{Linux Libertine O} % Serifenschrift
+%\setsansfont[Mapping=tex-text]{Linux Biolinum O} % serifenlose Schrift
+%\setmonofont[Mapping=tex-text,Scale=0.9]{Courier New} % Schriftart für Code
+%\setmonofont[Mapping=tex-text]{DejaVu Sans Mono}
+%\usepackage{polyglossia}
+%\setdefaultlanguage[spelling=new,latesthyphen=true]{german} 
+
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ 
+%% Globale Dokument-Informationen %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\arbeitstitel}{Mein Thema}
+\newcommand{\arbeitsart}{Abschlussarbeit}
+\newcommand{\autor}{Beispiel Student}
+\newcommand{\mail}{Student.xyz@tu-ilmenau.de}
+\newcommand{\studiengang}{Ingenieurinformatik}
+\newcommand{\matrikelnr}{12345}
+\newcommand{\erstgutachter}{Prof. Dr.-Ing. habil. Armin Zimmermann}
+\newcommand{\zweitgutachter}{M.Sc. Thomas Dietrich}
+\newcommand{\fakultaet}{Fakultät für Informatik und Automatisierung}
+\newcommand{\fachgebiet}{Fachgebiet System- und Software-Engineering}
+\newcommand{\ort}{Ilmenau}
+\newcommand{\ausgabedatum}{01.~Januar 2012}
+\newcommand{\abgabedatum}{31.~Dezember 2012}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%% Packages für Grafiken & Abbildungen %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{graphicx}			% Zum Laden von Grafiken
+\usepackage{wrapfig}			% Einbinden von Grafiken mit umfließendem Text
+\usepackage{subfig}				% Einbinden von mehreren Objekten innerhalb eines floats
+\usepackage{pdfpages}			% bindet eine Grafikdatei (.pdf oder .jpg) seitenfüllend in das Dokument ein
+\graphicspath{{Bilder/}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%% Zeilenabstände und Seitenrände %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{setspace}
+\usepackage{geometry}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%% Literaturverzeichnis %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[numbers,square]{natbib}
+\bibliographystyle{alphadin}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%% TODOs %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage{pdfcomment}
+
+\usepackage[%
+		%disable,				% deaktiviert das Package
+		german,
+		textsize=tiny,
+		colorinlistoftodos
+]{todonotes}
+\newcommand{\todoref}[1]{\todo[color=blue!40]{Missing Reference #1}}
+\newcommand{\todoedit}[1]{\todo[color=green!40]{#1}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+
+%% HyperRef %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% http://www.tug.org/applications/hyperref/manual.html
+\usepackage[
+		pdftitle={\arbeitstitel},	% Sets the document information Title field
+		pdfauthor={\autor},			% Sets the document information Author field
+		pdfsubject={\arbeitsart},	% Sets the document information Subject field
+		%backref=section,			% adds backlink text to the end of each item in the bibliography, as a list of section numbers
+		%pdfpagelabels,
+		pdfpagelayout=TwoColumnRight, 
+		%pdfpagelayout=TwoPageRight, % Displays two pages, odd-numbered pages to the right % Achtung, PDF-Version 1.5 erforderlich
+		%pdfdisplaydoctitle=true,	% display document title instead of file name in title bar
+		hypertexnames=false,		% zur korrekten Erstellung der Bookmarks
+		%linktocpage 				% Seitenzahlen anstatt Text im Inhaltsverzeichnis verlinken
+		bookmarks, 
+		bookmarksnumbered=true,
+		bookmarksopen=true,  
+		bookmarksopenlevel=1,
+		hyperfootnotes=false, 
+		%unicode=true, 
+		colorlinks=true, 
+% diese Farbdefinitionen sollten für den Druck verwendet werden (alles schwarz)
+%		linkcolor=black, 		% einfache interne Verknüpfungen
+%		anchorcolor=black, 		% Ankertext
+%		citecolor=black, 		% Verweise auf Literaturverzeichniseinträge im Text
+%		filecolor=black, 		% Verknüpfungen, die lokale Dateien öffnen
+%		menucolor=black, 		% Acrobat-Menüpunkte
+%		urlcolor=black, 		% Farbe des verlinkten Textes externe URLs
+% diese Farbdefinitionen kann für farbigen Druck oder für die weitergabe als PDF verwendet werden
+		linkcolor=darkblue,		% einfache interne Verknüpfungen
+		citecolor=darkblue, 	% Verweise auf Literaturverzeichniseinträge im Text
+		menucolor=darkblue,		% Acrobat-Menüpunkte
+		urlcolor=cyan, 			% Farbe des verlinkten Textes externe URLs
+]{hyperref}
+
+% URL verlinken, lange URLs umbrechen etc.
+\usepackage{url}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+  
+%% Absatzeinstellung %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\setlength{\parskip}{3pt}
+%\setlength{\parindent}{0pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%% Abkürzungsverzeichnis %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[intoc]{nomencl}
+\let\abbrev\nomenclature
+% Deutsche Überschrift
+\renewcommand{\nomname}{Abkürzungsverzeichnis}
+% Punkte zw. Abkürzung und Erklärung
+\setlength{\nomlabelwidth}{.25\hsize}
+\renewcommand{\nomlabel}[1]{#1 \dotfill}
+% Zeilenabstände verkleinern
+\setlength{\nomitemsep}{-\parsep}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{siunitx}
+% Nutzung:
+%   \SI[options]{value}[pre-unit]{unit}
+%   \si[options]{unit}
+%   \num[options]{number}
+%   \ang[options]{angle}
+\sisetup{
+	locale=DE,
+	load-configurations=binary,
+	load-configurations=abbreviations,
+	per-mode=symbol,
+}
+\DeclareSIUnit\bit{Bit}
+\DeclareSIUnit\byte{Byte}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{booktabs}
+\setlength{\belowbottomsep}{\belowrulesep} %Ersetzt 0pt-Abstand zwischen bottomrule und Caption
+% Nutzung:
+%   \toprule, \midrule, \bottomrule
+%   \cmidrule, \addlinespace
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Verschiedenes %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{ifdraft}					% In Abhängigkeit von draft bzw. final Aktionen ausführen % \ifdraft{draft case}{final case}
+\usepackage{pdfpages} 					% pdf import
+\usepackage{amsmath,amssymb,amstext} 	% für mathematische Symbole
+\usepackage{upgreek}					% für nicht-kursive griechische Buchstaben, Bsp. \uppi
+%\usepackage{array}
+\usepackage{xspace}
+\usepackage{xcolor}
+\usepackage{multirow}
+\usepackage{listings} 					% Programmcode
+%\usepackage{chngcntr} 					% fortlaufendes Durchnummerieren der Fußnoten
+\usepackage[perpage]{footmisc}
+% Kopf- und Fußzeilen anpassen
+\usepackage[
+		automark, 						% Kapitelangaben in Kopfzeile automatisch erstellen
+		headsepline, 					% Trennlinie unter Kopfzeile
+%		footsepline, 					% Trennlinie über Fußzeile
+		ilines 							% Trennlinie linksbündig ausrichten
+]{scrpage2}
+  
+\usepackage{caption} 
+\captionsetup{format=hang,margin=30pt,font=small,labelfont=bf,labelsep=endash}
+
+\usepackage{paralist}
+
+\usepackage[yyyymmdd,hhmmss]{datetime}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\makenomenclature
+
+%% Seitenstil %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Zeilenabstand 1,5
+\onehalfspacing 
+%\linespread{1.5}
+
+\setlength{\topskip}{\ht\strutbox} % behebt Warnung von geometry
+\geometry{paper=a4paper,left=30mm,right=18mm,top=15mm,bottom=55mm}
+
+\pagestyle{scrheadings} % Kopf- und Fußzeilen
+\renewcommand*{\chapterpagestyle}{scrheadings} % Kopf- und Fußzeile auch auf Kapitelanfangsseiten 
+\renewcommand{\headfont}{\normalfont} % Schriftform der Kopfzeile
+
+%TODO: fancyhdr
+
+% Kopfzeile
+%\ihead{\large{\textsc{\arbeitstitel}}\\ \small{\arbeitstitel} \\[2ex] \textit{\headmark}}
+%\ihead{\large{\textsc{\arbeitsart}}\ - \small{\autor} \\ \textit{\headmark}}
+\ihead{\textit{\headmark}}
+\chead{}
+\ohead{\pagemark}
+%\ohead{\includegraphics[scale=0.15]{\logo}}
+\setlength{\headheight}{30mm} % Höhe der Kopfzeile
+% Kopfzeile über den Text hinaus verbreitern
+\setheadwidth[0pt]{textwithmarginpar} 
+\setheadsepline[text]{0.4pt} % Trennlinie unter Kopfzeile
+
+% Fußzeile
+%\ifoot{\small{\arbeitsart\ \autor}}
+\ifoot{}
+\cfoot{}
+\ofoot{\pagemark}
+
+%% Verschiedenes %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frenchspacing % erzeugt ein wenig mehr Platz hinter einem Punkt
+
+% Hurenkind und Schusterjunge vermeiden (http://de.wikipedia.org/wiki/Hurenkind)
+\clubpenalty = 10000
+\widowpenalty = 10000
+\displaywidowpenalty = 10000
+
+% Fußnoten fortlaufend durchnummerieren
+%\counterwithout{footnote}{chapter}
+
+% Farben für Listings
+\definecolor{darkblue}{rgb}{0,0,.5}
+\definecolor{hellgelb}{rgb}{1,1,0.9}
+\definecolor{hellgrau}{rgb}{0.95,0.95,0.95}
+\definecolor{colKeys}{rgb}{0,0,1}
+\definecolor{colIdentifier}{rgb}{0,0,0}
+%\definecolor{colComments}{rgb}{1,0,0}		%rot
+%\definecolor{colComments}{rgb}{0.1,0.5,0}	%grün
+\definecolor{colComments}{rgb}{0.5,0.5,0.5}	%grau
+\definecolor{colString}{rgb}{0,0.5,0}
+
+% Quellcode-Ausgabe formatieren
+\renewcommand{\lstlistlistingname}{Verzeichnis der Quelltexte} 
+\renewcommand{\lstlistingname}{Quelltext}
+\lstset{
+		float=tbph,												% makes sense on individual displayed listings only and lets them float
+		language=C++,											% choose the language of the code
+		basicstyle=\footnotesize,								% the size of the fonts that are used for the code
+		numbers=left,											% where to put the line-numbers
+		numberstyle=\tiny,										% the size of the fonts that are used for the line-numbers
+		%numberstyle=\footnotesize,								% the size of the fonts that are used for the line-numbers
+		stepnumber=1,											% the step between two line-numbers. If it's 1 each line will be numbered
+		numbersep=7pt,											% how far the line-numbers are from the code
+		backgroundcolor=\color{hellgelb},						% choose the background color. You must add \usepackage{color}
+		showspaces=false,										% show spaces adding particular underscores
+		showstringspaces=false,									% underline spaces within strings
+		showtabs=false,											% show tabs within strings adding particular underscores
+		frame=single,											% adds a frame around the code
+%		frame={trLb},											% adds a frame around the code
+		tabsize=4,												% sets default tabsize to 2 spaces
+		captionpos=b,											% sets the caption-position (b or t)
+		breaklines=true,										% sets automatic line breaking
+		breakatwhitespace=false,								% sets if automatic breaks should only happen at whitespace
+		breakindent=5pt,										% is the indention of the second, third,... line of broken lines
+%		escapeinside={\%*}{*)},									% if you want to add a comment within your code
+		identifierstyle=\color{colIdentifier},
+		keywordstyle=\color{colKeys},
+		stringstyle=\color{colString},
+		commentstyle=\color{colComments},
+		columns=fixed,
+		%emph={bool,int,unsigned,char,true,false,void}, emphstyle=\color{blue},
+		%emph={[2]\#include,\#define,\#ifdef,\#endif}, emphstyle={[2]\color{darkblue}},
+}
+
+% Neuberechnung des Satzspiegels (zur Vermeidung von overfull boxes)
+%\KOMAoptions{DIV=last}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Befehle %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+% Abkürzungen mit korrektem Leerraum 
+%\newcommand{\ua}{\mbox{u.\,a.\ }}
+%\newcommand{\zB}{\mbox{z.\,B.\ }}
+%\newcommand{\dahe}{\mbox{d.\,h.\ }}
+\newcommand{\iic}{\mbox{I\texttwosuperior C}} % I²C
+%\newcommand{\iic}{\mbox{I²C}} % I²C
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% DOKUMENTVORLAGE THOMAS DIETRICH  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
