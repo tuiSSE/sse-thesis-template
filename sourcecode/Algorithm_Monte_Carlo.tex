@@ -1,0 +1,42 @@
+
+\newpage
+
+\begin{lstlisting}[caption={\texttt{Abstract Representation} -  Monte Carlo Algorithm}, label=code:monte_carlo_code, showlines=true]
+// Initialization, set current state to the initial state
+state *current_state = initial_state;
+
+// Main simulation loop
+while ( ! stop_condition_reached() )
+{
+  int tran, selected_tran;	
+  // Array with all the outgoing transitions rates from the current state
+  double trans_rates[] = get_out_transitions_rates( current_state );
+  int trans_count = get_out_transitions_count( current_state );
+
+  // Calculate the sum of all the outgoing transitions rates
+  double total_rates = 0;	
+  for( tran = 0; tran < trans_count;  tran++)
+    total_rates += trans_rates[ tran ];		
+
+  // Calculate the average time spent in the state
+  double time_spent = 1.0 / total_rates;
+  // Evaluate measures defined over the current state
+  evaluate_measures( current_state, time_spent );
+
+  // Randomly select one outgoing transitions, based on their rates
+  double random_value = generate_random_value( 0, total_rates );
+  for( tran = 0; tran < trans_count;  tran++)
+  {
+    if ( random_value <  trans_rates[ tran ] ) 
+    {
+      selected_tran = tran;
+      break;
+    }
+    random_value -= trans_rates[ tran ];
+  }	
+		
+  // Execute the selected transition, and update the current state
+  current_state = fire_transition( current_state, selected_tran );
+}
+
+\end{lstlisting}

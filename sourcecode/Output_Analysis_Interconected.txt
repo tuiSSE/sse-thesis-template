@@ -1,0 +1,22 @@
+
+Analysis Output:
+
+STEADY STATE SOLUTION OF NET Interconnected_Model
+
+
+STRUCTURAL ANALYSIS ...
+
+
+GENERATING THE REDUCED REACHABILITY GRAPH USING TIME EFFICIENT ALGORITHM ...
+The reduced reachability graph of this eDSPN
+cannot be generated because of lacking main memory.
+
+ERROR occurred while derive_SMC execution.
+SOLUTION OF MODEL Interconnected_Model FAILED.
+
+Removing temporary files.
+
+
+--------------------------------------------------------------------------------------
+                              Analysis error, see above.
+--------------------------------------------------------------------------------------
