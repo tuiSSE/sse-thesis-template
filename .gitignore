@@ -116,3 +116,5 @@ sympy-plots-for-*.tex/
 
 # xindy
 *.xdy
+.tmp/
+Abschlussarbeit.pdf

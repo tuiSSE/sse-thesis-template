@@ -1,8 +1,8 @@
-\input{header} 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% DOKUMENTVORLAGE THOMAS DIETRICH  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{header}
 
 \begin{document}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -11,11 +11,11 @@
 \pdfbookmark{\arbeitsart{} \autor}{\arbeitsart{} \autor}
 \include{Deckblatt}
 
-\include{Inhalt/Danksagung} 
+\include{Inhalt/Danksagung}
 
-\cleardoublepage{} 
-\pdfbookmark{Abstract}{Abstract}   
-\include{Inhalt/Abstract}  
+\cleardoublepage{}
+\pdfbookmark{Abstract}{Abstract}
+\include{Inhalt/Abstract}
 
 \input{Nomenclature}	% nur Definitionen, kein sichtbarer Dokumentinhalt
 \input{Silbentrennung}	% nur Definitionen, kein sichtbarer Dokumentinhalt
@@ -29,7 +29,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Hauptteil
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\pagenumbering{arabic} 
+\pagenumbering{arabic}
 \include{Inhalt/Einleitung}
 \include{Inhalt/Hauptteil}
 \include{Inhalt/Zusammenfassung}
@@ -41,11 +41,11 @@
 \cleardoublepage
 
 \pagenumbering{Roman}
-\begin{appendix}  
-\include{Inhalt/Anhang}   
+\begin{appendix}
+\include{Inhalt/Anhang}
 \end{appendix}
-    
-\KOMAoptions{open=any}   
+
+\KOMAoptions{open=any}
 \include{Inhalt/CDVerzeichnis}
 
 \markboth{\nomname}{\nomname}
@@ -56,14 +56,14 @@
 \listoffigures				% Abbildungsverzeichnis
 \lstlistoflistings			% Listings-Verzeichnis
 
-\KOMAoptions{open=left}		% war in einem Spezialfall sinnvoll 
+\KOMAoptions{open=left}		% war in einem Spezialfall sinnvoll
 \bibliography{Literatur}	% Literaturverzeichnis
 \KOMAoptions{open=right}
 
 \listoftodos				% TODOs, nicht im final Dokument!
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-      
-    
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Eidesstattliche Erklärung
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -80,9 +80,9 @@ selbständig verfasst und keine anderen als die angegebenen Quellen und Hilfsmitt
 
 \ort, den \today\\
 
-\rule[-0.2cm]{5cm}{0.5pt} 
+\rule[-0.2cm]{5cm}{0.5pt}
 
-\textsc{\autor} 
+\textsc{\autor}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \end{document}
