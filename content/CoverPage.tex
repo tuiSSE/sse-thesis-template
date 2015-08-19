@@ -1,31 +1,61 @@
 \begin{titlepage}
 \thispagestyle{empty}
 
+%\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
+%\let\endchangemargin=\endlist 
+
+
 \begin{center} 
-	\includegraphics[scale=1]{Bilder/Logo_schwarzgruen_RGB_04}\\[0ex]
-	%Technische Universit‰t Ilmenau\\[0ex]
-	\fakultaet\\[0ex]
-	\fachgebiet\\[8ex]
-	\Huge{\textbf{\arbeitsart}}\\[0ex] 
-	\Large{\textbf{\arbeitstitel}}\\[1.5ex]
-	
-	\vfill 
-	
-	\normalsize
-	\begin{tabular}{lll}
-		\textbf{Ausgabedatum:}					& & \ausgabedatum				\\[0.5ex]
-		\textbf{Abgabedatum:}					& & \abgabedatum				\\[0.5ex]
-												& & 							\\[0.5ex]
-		\textbf{verantwortlicher Professor:}	& & \erstgutachter				\\[0.5ex]
-		\textbf{wissenschaftlicher Betreuer:}	& & \zweitgutachter				\\[0.5ex]
-												& & 							\\[0.5ex]
-		\textbf{Eingereicht von:} 				& & \autor						\\[0.5ex]
-												& & Matrikel-Nr. \matrikelnr	\\[0.5ex]
-												& & \mail						\\[0.5ex]
-	\end{tabular}
-\end{center}  
+    \includegraphics[scale=1]{images/TU_Logo_RGB_04}\\[0ex]
+    %Technische Universit√§t Ilmenau\\[0ex]
+    \faculty\\[0ex]
+    \department\\[8ex]
+    \Huge{\textbf{\thesistype}}\\[2ex] 
+
+    \begin{addmargin}[0em]{1em}
+        \begin{center}
+            \Large{\textbf{\thesistitle}}\\[1.5ex]
+        \end{center}
+    \end{addmargin}
+    
+    \vfill 
+
+    \rule{\textwidth}{0.4pt}
+    \normalsize
+
+%% english %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{tabular}{lll}
+        \\
+        \textbf{Registration Date:}            & & \registrationdate \\[0.5ex]
+        \textbf{Submission Date:}              & & \submissiondate \\[0.5ex]
+                                               & & \\[0.5ex]
+        \textbf{Supervisor:}                   & & \supervisor \\[0.5ex]
+%       \textbf{Second  Supervisor:}           & & \secondtutor \\[0.5ex]
+                                               & & \\[0.5ex]
+        \textbf{Submitted by:}                 & & \autor \\[0.5ex]
+                                               & & Matriculation Number \matriculationnr \\[0.5ex]
+                                               & & \mail \\[0.5ex]
+    \end{tabular}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% german %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%    \begin{tabular}{lll}
+%        \\
+%        \textbf{Ausgabedatum:}                & & \registrationdate \\[0.5ex]
+%        \textbf{Abgabedatum:}                 & & \submissiondate \\[0.5ex]
+%                                              & & \\[0.5ex]
+%        \textbf{verantwortlicher Professor:}  & & \supervisor \\[0.5ex]
+%        \textbf{wissenschaftlicher Betreuer:} & & \secondtutor \\[0.5ex]
+%                                              & & \\[0.5ex]
+%        \textbf{Eingereicht von:}             & & \autor \\[0.5ex]
+%                                              & & Matrikel-Nr. \matriculationnr \\[0.5ex]
+%                                              & & \mail \\[0.5ex]
+    \end{tabular}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{center}
 
 %TODO: draft
-%\raggedleft \tiny \ifdraft{draft version, compiled on \today\ at \currenttime}{finale Version}
+%\raggedleft \tiny \ifdraft{draft version, compiled on \today\ at \currenttime}{final Version}
 
 \end{titlepage}

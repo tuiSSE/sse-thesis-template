@@ -1,4 +1,29 @@
-\addchap{CD-Verzeichnis}
+\addchap{CD Structure}
 \label{sec:cd}
 
-Dieser Arbeit liegt eine CD bei, \ldots
+A soft version of the current work is submitted. Following, the CD structure is presented.
+
+\newcommand{\desc}[1]{\hfill \textit{#1}}
+\newcommand{\vs}{\vspace{3mm}}
+\vs
+\dirtree{%
+    .1 Root.    	
+        .2 Latex\_Project \desc{The latex project of the current work}\vs.
+        	.3 \ldots{}\vs.
+        .2 Models \desc{All the models used in the current work}\vs.
+        	.3 Model\_1\_variations\vs.
+        		.4 \ldots{} \desc{All 9 variations for model in Fig 5.2}\vs.		
+        	.3 Model\_2\_variations\vs.
+        		.4 \ldots{} \desc{All 9 variations for model in Fig 5.3}\vs.		
+        	.3 Interconnected\_Model.xml \desc{Model in Fig 5.1}\vs.
+        	.3 Interconnected\_Model\_\_one\_token\_variation.xml\vs.
+        	.3 Non\_Markovian\_Model\_GSM\_R.xml \desc{Model in Fig 5.4}\vs.
+        	.3 Non\_Markovian\_Model\_GSM\_R\_\_two\_tokens\_variation.xml\vs.
+		.2 Multi-Trajectory\_Kernel\_Source \desc{Core algorithm implementation}\vs.
+			.3 sim\_mt\_kernel.c \desc{Main loop and evaluation}\vs.
+			.3 sim\_mt\_particle.c \desc{Particle definition and structures}\vs.
+		.2 TimeNET	\desc{TimeNET source projects}\vs.
+			.3 \ldots{} \desc{including all files added by this work}\vs.
+		.2 Multi-Trajectory Rare-Event Simulation of Stochastic Petri Nets.pdf. 
+}
+

@@ -1,92 +1,81 @@
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% DOKUMENTVORLAGE THOMAS DIETRICH  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% SSE Thesis Document Template (Thomas Dietrich) %%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \input{header}
 
 \begin{document}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Titelseite und folgendes
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\pdfbookmark{\arbeitsart{} \autor}{\arbeitsart{} \autor}
-\include{Deckblatt}
+%\input{content/Nomenclature}
 
-\include{Inhalt/Danksagung}
 
-\cleardoublepage{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Title Page and Abstracts
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pdfbookmark{\thesistype{} \autor}{\thesistype{} \autor}
+\include{content/CoverPage}
+\pdfbookmark{Acknowledgement}{Acknowledgement}
+\include{content/Acknowledgement}
+
+%\cleardoublepage{}
 \pdfbookmark{Abstract}{Abstract}
-\include{Inhalt/Abstract}
+\include{content/Abstract}
 
-\input{Nomenclature}	% nur Definitionen, kein sichtbarer Dokumentinhalt
-\input{Silbentrennung}	% nur Definitionen, kein sichtbarer Dokumentinhalt
-\cleardoublepage{}
+%\cleardoublepage{}
 
 \pagenumbering{roman}
-\pdfbookmark{Inhaltsverzeichnis}{Inhaltsverzeichnis}
+\pdfbookmark{contents}{contents}
 \tableofcontents
 \cleardoublepage{}
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Hauptteil
+%% content
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \pagenumbering{arabic}
-\include{Inhalt/Einleitung}
-\include{Inhalt/Hauptteil}
-\include{Inhalt/Zusammenfassung}
+\include{content/Thesis_1_Introduction}
+\include{content/Thesis_2_Background}
+\include{content/Thesis_3_Desing}
+\include{content/Thesis_4_Implementation}
+\include{content/Thesis_5_Results}
+\include{content/Thesis_6_Conclucions}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Anhang und Verzeichnisse
+%% Appendix and Lists
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \cleardoublepage
 
 \pagenumbering{Roman}
 \begin{appendix}
-\include{Inhalt/Anhang}
+\include{content/Appendix}
 \end{appendix}
 
 \KOMAoptions{open=any}
-\include{Inhalt/CDVerzeichnis}
+\include{content/CDStructure}
 
-\markboth{\nomname}{\nomname}
-\nocite{*} 					% alle Quellen aufführen
+%\markboth{\nomname}{\nomname}
 
-\printnomenclature			% Abkürzungsverzeichnis
-\listoftables				% Tabellenverzeichnis
-\listoffigures				% Abbildungsverzeichnis
-\lstlistoflistings			% Listings-Verzeichnis
+%\printnomenclature			% list of abbreviations
+\listoftables				% List of tables
+\listoffigures				% List of figures
+\lstlistoflistings			% List of sourcecode
 
-\KOMAoptions{open=left}		% war in einem Spezialfall sinnvoll
-\bibliography{Literatur}	% Literaturverzeichnis
+\KOMAoptions{open=left}
+\nocite{*} 					% all sources
+\bibliography{bibliography}	% list the sources
 \KOMAoptions{open=right}
 
 \listoftodos				% TODOs, nicht im final Dokument!
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Eidesstattliche Erklärung
+%% Declaration of Autonomy
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter*{Eidesstattliche Erklärung}
-\thispagestyle{empty}
-
-\vspace{2cm}
-
-\noindent Ich, \autor, Matrikel-Nr.\ \matrikelnr, versichere hiermit, dass ich meine \arbeitsart\ mit dem Thema
-\begin{quote}
-\textit{\arbeitstitel}
-\end{quote}
-selbständig verfasst und keine anderen als die angegebenen Quellen und Hilfsmittel benutzt habe, wobei ich alle wörtlichen und sinngemäßen Zitate als solche gekennzeichnet habe. Die Arbeit wurde bisher keiner anderen Prüfungsbehörde vorgelegt und auch nicht veröffentlicht.\\[6ex]
-
-\ort, den \today\\
-
-\rule[-0.2cm]{5cm}{0.5pt}
-
-\textsc{\autor}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{content/DeclarationOfAuthorship}
 
 \end{document}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% DOKUMENTVORLAGE THOMAS DIETRICH  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% SSE Thesis Document Template (Thomas Dietrich) %%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
