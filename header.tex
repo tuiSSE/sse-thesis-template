@@ -5,8 +5,8 @@
 
 \documentclass[
 		12pt,						% font size
-		english,					% english document
-		%ngerman,					% deutsches Dokument, für Umlaute, Silbentrennung etc. (Umlauts, Hyphenation)
+		english,					% LANGUAGE english document
+		%ngerman,					% LANGUAGE deutsches Dokument, für Umlaute, Silbentrennung etc. (Umlauts, Hyphenation)
 		a4paper,					% paper size
 		%oneside,					% single-sided document
 		twoside,					% two-sided document
@@ -23,18 +23,18 @@
 
 
 %% Scripture and Language %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage[english]{babel}
-%\usepackage[ngerman]{babel}
+\usepackage[english]{babel}  %LANGUAGE
+%\usepackage[ngerman]{babel} %LANGUAGE
 \usepackage[T1]{fontenc}
 \usepackage[ansinew]{inputenc}
 \usepackage{textcomp} % Euro-Sign etc.
 \usepackage{lmodern}
 
+%% first tests towards the usage of xetex
 %\usepackage[T1]{fontenc}
 %\usepackage[utf8x]{inputenc}
 %\usepackage{libertine}
 %\usepackage[ngerman]{babel}
-
 %\usepackage{xunicode}
 %\usepackage{fontspec}
 %\usepackage{xltxtra} % For XeLaTeX
@@ -48,6 +48,8 @@
 
 
 %% Global Document Information %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% please fill in your personal information
+* do not delete anything here
 \newcommand{\thesistitle}{Thesis Title}
 \newcommand{\thesistype}{Master Thesis}
 \newcommand{\autor}{Author Name}
@@ -55,7 +57,7 @@
 \newcommand{\courseofstudies}{rocket science}
 \newcommand{\matriculationnr}{XXXXX}
 \newcommand{\supervisor}{Prof. Responsible}
-%\newcommand{\secondtutor}{Second Reader}
+\newcommand{\secondtutor}{Second Reader}
 \newcommand{\faculty}{Department of Computer Science and Automation}
 \newcommand{\department}{Systems and Software Engineering Group}
 \newcommand{\location}{Ilmenau}
@@ -125,8 +127,8 @@
 %\usepackage{pdfcomment}
 \usepackage[%
 		%disable,
-		english,
-		%german,
+		english, %LANGUAGE
+		%german, %LANGUAGE
 		textsize=tiny,
 		colorinlistoftodos
 ]{todonotes}
@@ -184,8 +186,8 @@
 %% Abbreviations %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[intoc]{nomencl}
 \let\abbrev\nomenclature
-%\renewcommand{\nomname}{Abkürzungsverzeichnis}
-\renewcommand{\nomname}{Abbreviations}
+%\renewcommand{\nomname}{Abkürzungsverzeichnis} %LANGUAGE
+\renewcommand{\nomname}{Abbreviations} %LANGUAGE
 \setlength{\nomlabelwidth}{.25\hsize}
 \renewcommand{\nomlabel}[1]{#1 \dotfill} % dots between abbreviations and explainations
 \setlength{\nomitemsep}{-\parsep} % Decrease line spacing
@@ -195,9 +197,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{siunitx}
 \sisetup{
-	%locale=UK,
-	%locale=US,
-	locale=DE,
+	%locale=UK, %LANGUAGE
+	%locale=US, %LANGUAGE
+	locale=DE,  %LANGUAGE
 	load-configurations=binary,
 	load-configurations=abbreviations,
 	per-mode=symbol,
@@ -312,7 +314,7 @@
 \definecolor{colString}{rgb}{0,0.5,0}
 
 % Formatting Source Edition
-\renewcommand{\lstlistlistingname}{List of Source Code}
+\renewcommand{\lstlistlistingname}{List of Source Code} %LANGUAGE
 \renewcommand{\lstlistingname}{Source Code}
 \lstset{
 		float=tbph,							% makes sense on individual displayed listings only and lets them float
@@ -352,7 +354,7 @@
 
 %% user defined commands and helpers %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% abbreviations with correct spacing
+% abbreviations with correct spacing %LANGUAGE
 %\newcommand{\ua}{\mbox{u.\,a.\ }}
 \newcommand{\zB}{\mbox{z.\,B.\ }}
 %\newcommand{\dahe}{\mbox{d.\,h.\ }}
