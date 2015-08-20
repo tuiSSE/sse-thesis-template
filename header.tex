@@ -17,7 +17,7 @@
 		listof=totoc,				% list directories in the table of contents
 		bibliography=totoc,			% list bibliography in the table of contents
 		captions=tableheading,		% output labeling tables below
-		draft=true, 				% draft=true useful during writing, set to false for final document
+		draft=true, 				% draft=true useful during writing, set to false for final document %BUG will stop hyperref from working (bookmarks)
 ]{scrreprt}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -143,17 +143,19 @@
 		pdftitle={\thesistitle},	% Sets the document information Title field
 		pdfauthor={\autor},			% Sets the document information Author field
 		pdfsubject={\thesistype},	% Sets the document information Subject field
-		%backref=section,			% Adds backlink text to the end of each item in the bibliography, as a list of section numbers
-		%pdfpagelabels,
+		draft=false,				% Overwrites documentclass draft option 
+		backref=section,			% Adds backlink text to the end of each item in the bibliography, as a list of section numbers
+		pdfpagelabels,
 		pdfpagelayout=TwoColumnRight,
-		%pdfdisplaydoctitle=true,	% Display document title instead of file name in title bar
+		pdfdisplaydoctitle=true,	% Display document title instead of file name in title bar
 		hypertexnames=false,		% To properly display the bookmarks
 		%linktocpage 				% Social bookmarking numbers instead of text in the table of contents
 		bookmarks,
 		bookmarksnumbered=true,
 		bookmarksopen=true,
-		bookmarksopenlevel=1,
+		%bookmarksopenlevel=1,
 		hyperfootnotes=false,
+		hyperfigures=true,
 		%unicode=true,
 		colorlinks=true,
 	%% These color definitions should be used for printing (all black)
