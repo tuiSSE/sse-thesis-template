@@ -6,7 +6,7 @@
 \documentclass[
 		12pt,						% font size
 		english,					% LANGUAGE english document
-		%ngerman,					% LANGUAGE deutsches Dokument, für Umlaute, Silbentrennung etc. (Umlauts, Hyphenation)
+		%ngerman,					% LANGUAGE deutsches Dokument, fÃ¼r Umlaute, Silbentrennung etc. (Umlauts, Hyphenation)
 		a4paper,					% paper size
 		%oneside,					% single-sided document
 		twoside,					% two-sided document
@@ -17,7 +17,7 @@
 		listof=totoc,				% list directories in the table of contents
 		bibliography=totoc,			% list bibliography in the table of contents
 		captions=tableheading,		% output labeling tables below
-		draft=false, 				% draft=true useful during writing, set to false for final document
+		draft=true, 				% draft=true useful during writing, set to false for final document
 ]{scrreprt}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -49,7 +49,7 @@
 
 %% Global Document Information %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % please fill in your personal information
-* do not delete anything here
+% do not delete anything here
 \newcommand{\thesistitle}{Thesis Title}
 \newcommand{\thesistype}{Master Thesis}
 \newcommand{\autor}{Author Name}
@@ -146,7 +146,6 @@
 		%backref=section,			% Adds backlink text to the end of each item in the bibliography, as a list of section numbers
 		%pdfpagelabels,
 		pdfpagelayout=TwoColumnRight,
-		%pdfpagelayout=TwoPageRight, % Displays two pages, odd-numbered pages to the right % Attention, PDF-Version 1.5 required
 		%pdfdisplaydoctitle=true,	% Display document title instead of file name in title bar
 		hypertexnames=false,		% To properly display the bookmarks
 		%linktocpage 				% Social bookmarking numbers instead of text in the table of contents
@@ -157,7 +156,6 @@
 		hyperfootnotes=false,
 		%unicode=true,
 		colorlinks=true,
-		
 	%% These color definitions should be used for printing (all black)
 	%	linkcolor=black, 		% Simple internal links
 	%	anchorcolor=black, 		% Anchor text
@@ -186,7 +184,7 @@
 %% Abbreviations %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[intoc]{nomencl}
 \let\abbrev\nomenclature
-%\renewcommand{\nomname}{Abkürzungsverzeichnis} %LANGUAGE
+%\renewcommand{\nomname}{AbkÃ¼rzungsverzeichnis} %LANGUAGE
 \renewcommand{\nomname}{Abbreviations} %LANGUAGE
 \setlength{\nomlabelwidth}{.25\hsize}
 \renewcommand{\nomlabel}[1]{#1 \dotfill} % dots between abbreviations and explainations
@@ -303,9 +301,9 @@
 %\counterwithout{footnote}{chapter}
 
 % Colors for Listings
-\definecolor{dkblue}{rgb}{0,0,.5}
-\definecolor{ltyellow}{rgb}{1,1,0.9}
-\definecolor{ltgrey}{rgb}{0.95,0.95,0.95}
+\definecolor{darkblue}{rgb}{0,0,.5}
+\definecolor{lightyellow}{rgb}{1,1,0.9}
+\definecolor{lightgrey}{rgb}{0.95,0.95,0.95}
 \definecolor{colKeys}{rgb}{0,0,1}
 \definecolor{colIdentifier}{rgb}{0,0,0}
 %\definecolor{colComments}{rgb}{1,0,0}		% red
@@ -325,7 +323,7 @@
 		%numberstyle=\footnotesize,			% the size of the fonts that are used for the line-numbers
 		stepnumber=1,						% the step between two line-numbers. If it's 1 each line will be numbered
 		numbersep=7pt,						% how far the line-numbers are from the code
-		backgroundcolor=\color{ltyellow},	% choose the background color. You must add \usepackage{color}
+		backgroundcolor=\color{lightyellow},	% choose the background color. You must add \usepackage{color}
 		showspaces=false,					% show spaces adding particular underscores
 		showstringspaces=false,				% underline spaces within strings
 		showtabs=false,						% show tabs within strings adding particular underscores
@@ -358,7 +356,7 @@
 %\newcommand{\ua}{\mbox{u.\,a.\ }}
 \newcommand{\zB}{\mbox{z.\,B.\ }}
 %\newcommand{\dahe}{\mbox{d.\,h.\ }}
-\newcommand{\iic}{\mbox{I\texttwosuperior C}} % I²C
+\newcommand{\iic}{\mbox{I\texttwosuperior C}} % IÂ²C
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% SSE Thesis Document Template (Thomas Dietrich) %%%%%%%%%%%%%%%%%%%%%

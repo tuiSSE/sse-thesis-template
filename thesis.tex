@@ -14,20 +14,22 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \pdfbookmark{\thesistype{} \autor}{\thesistype{} \autor}
 \include{content/CoverPage}
+
+\cleardoublepage{}
 \pdfbookmark{Acknowledgement}{Acknowledgement} %LANGUAGE
 %\pdfbookmark{Danksagung}{Danksagung} %LANGUAGE
 \include{content/Acknowledgement}
 
-%\cleardoublepage{}
+\cleardoublepage{}
 \pdfbookmark{Abstract}{Abstract}
 \include{content/Abstract}
-
-%\cleardoublepage{}
-
+    
+\cleardoublepage{}
 \pagenumbering{roman}
-\pdfbookmark{contents}{contents} %LANGUAGE
+\pdfbookmark{Table of Content}{Table of Content} %LANGUAGE
 %\pdfbookmark{Inhaltsverzeichnis}{Inhaltsverzeichnis} %LANGUAGE
 \tableofcontents
+
 \cleardoublepage{}
 
 
@@ -46,7 +48,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Appendix and Lists
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\cleardoublepage
+%\cleardoublepage
 
 \pagenumbering{Roman}
 \begin{appendix}
